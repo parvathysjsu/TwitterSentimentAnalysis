@@ -1,11 +1,14 @@
 # TwitterSentimentAnalysis
 Sentiment Analysis on Tweets for a hashtag in NodeJS
 
+![Image](config/1.JPG)
+![Image](config/2.JPG)
+<br>
 # To Run
-npm install
-update config/properties.json for Twitter developer account app details
-npm start
-http://localhost:3000/
+1. npm install
+2. update config/properties.json for Twitter developer account app details
+3. npm start
+<br>http://localhost:3000/
 
 # Steps
 1. create developer account using https://developer.twitter.com/en/apps
