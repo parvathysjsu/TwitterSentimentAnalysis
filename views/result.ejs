@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sentiment Analysis</title>
+    <meta name="FoodStrap" content="Making it easy to donate food and bridging the gap between hunger and food waste.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+
+    <h1>Sentiment Analysis of Tweets</h1>
+    <h3>Query: <%= res.query %></h3>
+    <!--<h1><%= res.positiveTweets %></h1>
+    <h1><%= res.negativeTweets %></h1>
+    <h1><%= res.neutralTweets %></h1>-->
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <table id="myTable" align="center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>               
+                <th scope="col"> TWEET</th>
+                <th scope="col"> SCORE</th>
+                <th scope="col"> POSITIVE WORDS</th>
+                <th scope="col"> NEGATIVE WORDS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var item in res.tweets) { %>
+            <tr>
+                <th scope="row"><%= parseInt(item)+1 %></th>
+                <td> <%= res.tweets[item].tweet %></td>
+                <td> <%= res.tweets[item].score %></td>
+                <td> <%= res.tweets[item].positive %></td>
+                <td> <%= res.tweets[item].negative %></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var c1 = <%= res.positiveTweets %>;
+            var c2 = <%= res.negativeTweets %>;
+            let c3 = 100 - c1 - c2;
+            var data = google.visualization.arrayToDataTable([
+                ['Sentiment', 'Percentage'],
+                ['Positive', c1],
+                ['Negative', c2],
+                ['Neutral', c3]
+            ]);
+            var options = {
+                colors: ['#074b59', '#0b7389', '#11afd0'],
+                pieHole: 0.3
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+form {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.input_line {
+    width: 50%; 
+    border: 0;
+    border-bottom: 2px solid #053742;
+    padding: 7px 0;
+}
+input {
+    text-align: center;
+    font-size: large;
+}
+h1 {
+    color: #053742;
+}
+h3 {
+    color: #084a58;
+}
+th, td {
+    border: 1px solid #5d919c;   
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+  }
+
+  table {
+      width: 90%;
+      font-size:  1.1rem;
+  }
