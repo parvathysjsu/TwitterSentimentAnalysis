@@ -1,5 +1,6 @@
 # TwitterSentimentAnalysis
-Sentiment Analysis on Tweets for a hashtag in NodeJS
+Sentiment Analysis on Tweets for a query in NodeJS
+Query can be text or hashtag
 
 ![Image](screenshots/1.JPG)<br>
 ![Image](screenshots/2.JPG)
