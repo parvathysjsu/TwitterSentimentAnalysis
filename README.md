@@ -1,9 +1,9 @@
 # TwitterSentimentAnalysis
 Sentiment Analysis on Tweets for a hashtag in NodeJS
 
-![Image](config/1.JPG)
-![Image](config/2.JPG)
-<br>
+![Image](screenshots/1.JPG)<br>
+![Image](screenshots/2.JPG)
+<br><br>
 # To Run
 1. npm install
 2. update config/properties.json for Twitter developer account app details
